@@ -1,5 +1,6 @@
 from flask import *
 import pymysql
+import traceback
 
 app = Flask("MoviesCatalog")
 app.secret_key = "ddj3934u8en"
@@ -41,8 +42,12 @@ def allMovies():
         # Fetching all the results.
         all_movies = cursor.fetchall()
         return render_template("movies.html", movies=all_movies)
-    except pymysql.MySQLError as e:
-        return jsonify({"error": "Error occurred." + e}), 500
+    except Exception as e:
+        error_message = str(e)
+        error_trace = traceback.format_exc()
+        # print(error_trace)  # Logs error details to the console (useful for debugging)
+        return jsonify({"error": f"Error occurred.\nError msg: {error_message}\nError trace: {error_trace}"}), 500
+        # return jsonify({"error": "Error occurred."}), 500
 
 
 @app.route("/movies/add/")
