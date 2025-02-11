@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ movie[1] }}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <h1>{{ movie[1] }}</h1>
+    <p><span>Description: </span>{{ movie[2]}}</p>
+    <a href="/movies/"><button>View all Movies</button></a>
+  </body>
+</html>

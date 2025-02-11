@@ -1,0 +1,93 @@
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  text-align: center;
+}
+
+button, input[type="submit"] {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #5672fb;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+input[type="submit"] {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #56b6fb;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+button:hover, input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: #3f5ffc;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: #3fadfc;
+}
+
+.movies {
+  height: 75vh;
+  overflow-y: scroll;
+  margin: 24px 0;
+  background-color:#f4f4f4;
+}
+
+.movie {
+  background-color:#fff;
+  border-radius: 8px;
+  margin: 16px auto;
+  padding: 8px 12px;
+  width: 75%;
+}
+
+.movie:hover {
+  background-color:#c0f3ccd7;
+}
+
+span {
+  font-weight: bold;
+}
+
+.view-movies-btn {
+  display: block;
+}
+
+.movie-img {
+  margin: 48px 0;
+  border-radius: 8px;
+}
+
+.add-movie-form {
+  background-color: #f4f4f4;
+  width: max-content;
+  margin: 48px auto 24px auto;
+  padding: 32px 64px;
+  border-radius: 8px;
+}
+
+.add-movie-form input, textarea {
+  width: 300px;
+  font-size: 1.4rem;
+  box-sizing: content-box;
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+}
+
+.add-movie-form input[type="submit"] {
+  margin-top: 8px;
+}

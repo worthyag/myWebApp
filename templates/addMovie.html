@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Movie</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Add New Movie</h1>
+    <form method="post" action="/movies/save/" class="add-movie-form">
+      <div>
+        <label for="movie-name">Name </label>
+        <input type="text" id="movie-name" name="movie-name" />
+      </div>
+      <div>
+        <label for="movie-desc">Description </label>
+        <textarea name="movie-desc" id="movie-desc"></textarea>
+      </div>
+      <input type="submit" value="Add Movie" />
+    </form>
+    <a href="/movies/"><button>Back</button></a>
+  </body>
+</html>

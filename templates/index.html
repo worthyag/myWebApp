@@ -3,10 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Movie Catalog</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
   </head>
   <body>
-    <h1>This is the home page.</h1>
-    <a href="/about"><button>About</button></a>
+    <h1>Welcome to Movie Catalog</h1>
+    <img
+      class="movie-img"
+      src="https://publisher-ncreg.s3.us-east-2.amazonaws.com/pb-ncregister/swp/hv9hms/media/2024011611018_6d676cb38a29a6dbd22f8fcd3397012be764b6b623c04a2ebc8e8e5dc219885a.jpg"
+      alt="Cinema"
+    />
+    <a href="/movies" class="view-movies-btn"
+      ><button>View All Movies</button></a
+    >
   </body>
 </html>
