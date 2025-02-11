@@ -41,8 +41,8 @@ def allMovies():
         # Fetching all the results.
         all_movies = cursor.fetchall()
         return render_template("movies.html", movies=all_movies)
-    except:
-        return jsonify({"error": "Error occurred."}), 500
+    except pymysql.MySQLError as e:
+        return jsonify({"error": "Error occurred." + e}), 500
 
 
 @app.route("/movies/add/")
