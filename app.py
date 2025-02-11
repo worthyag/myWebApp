@@ -5,7 +5,7 @@ import traceback
 app = Flask("MoviesCatalog")
 app.secret_key = "ddj3934u8en"
 
-app.config["MYSQL_HOST"] = "192.168.0.63"
+app.config["MYSQL_HOST"] = "192.168.2.136"
 app.config["MYSQL_USER"] = "root"
 app.config["MYSQL_PASSWORD"] = "School20"
 app.config["MYSQL_DB"] = "moviesDB"
