@@ -4,7 +4,7 @@ import pymysql
 app = Flask("MoviesCatalog")
 app.secret_key = "ddj3934u8en"
 
-app.config["MYSQL_HOST"] = "0.0.0.0"
+app.config["MYSQL_HOST"] = "localhost"
 app.config["MYSQL_USER"] = "flaskuser"
 app.config["MYSQL_PASSWORD"] = "password12-"
 app.config["MYSQL_DB"] = "moviesDB"
