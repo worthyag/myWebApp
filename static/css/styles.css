@@ -7,6 +7,14 @@ body {
   text-align: center;
 }
 
+body.view-movie {
+  margin: 0 48px;
+}
+
+body.view-movie p {
+  margin: 48px 0;
+}
+
 button, input[type="submit"] {
   padding: 12px 16px;
   border: none;
