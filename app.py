@@ -9,7 +9,7 @@ app.secret_key = "ddj3934u8en"
 
 app.config["MYSQL_HOST"] = "192.168.2.136"
 # app.config["MYSQL_HOST"] = "localhost"
-app.config["MYSQL_USER"] = "flaskJenUser"
+app.config["MYSQL_USER"] = "flaskJenkinsUser"
 app.config["MYSQL_PASSWORD"] = "password12-"
 app.config["MYSQL_DB"] = "flaskJenkins"
 app.config["MYSQL_PORT"] = 3306
@@ -44,15 +44,15 @@ def create_table(cursor):
     cursor.execute("USE flaskJenkins")
 
     # Checking if the user exists.
-    # cursor.execute("SELECT USER FROM MYSQL.USER WHERE USER = 'flaskJenUser'")
+    # cursor.execute("SELECT USER FROM MYSQL.USER WHERE USER = 'flaskJenkinsUser'")
     # user_exists = cursor.fetchone()
 
     # if not user_exists:
     #     # Granting permission.
     #     cursor.execute(
-    #         "CREATE USER 'flaskJenUser'@'%' IDENTIFIED WITH mysql_native_password BY 'password12-'")
+    #         "CREATE USER 'flaskJenkinsUser'@'%' IDENTIFIED WITH mysql_native_password BY 'password12-'")
     #     cursor.execute(
-    #         "GRANT ALL PRIVILEGES ON *.* TO 'flaskJenUser'@'%' WITH GRANT OPTION")
+    #         "GRANT ALL PRIVILEGES ON *.* TO 'flaskJenkinsUser'@'%' WITH GRANT OPTION")
     #     cursor.execute("FLUSH PRIVILEGES")
 
     # Creating the table.
