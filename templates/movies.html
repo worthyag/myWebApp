@@ -15,17 +15,17 @@
     <section class="movies">
       {% for movie in movies %}
       <div class="movie">
-        <h3>{{ movie[1] }}</h3>
-        <p><span>Description: </span>{{ movie[2] }}</p>
+        <h3>{{ movie["movie_name"] }}</h3>
+        <p><span>Description: </span>{{ movie["movie_desc"] }}</p>
         <form method="post" action="/movies/view/">
           <input
             type="text"
-            value="{{ movie[0] }}"
+            value="{{ movie['movie_id'] }}"
             name="movie-id"
             id="movie-id"
             hidden
           />
-          <input type="submit" value="View {{ movie[1] }}" />
+          <input type="submit" value="View {{ movie['movie_name'] }}" />
         </form>
       </div>
       {% endfor %}

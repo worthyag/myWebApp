@@ -3,15 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ movie["movie_name"] }}</title>
+    <title>Movies</title>
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/styles.css') }}"
     />
   </head>
-  <body class="view-movie">
-    <h1>{{ movie["movie_name"] }}</h1>
-    <p><span>Description: </span>{{ movie["movie_desc"]}}</p>
-    <a href="/movies/"><button>View all Movies</button></a>
+  <body>
+    <h1>All Movies</h1>
+    <p>No movies available! Click the button below to add a movie.</p>
+    <a href="/movies/add/"><button>Add a new movie</button></a>
+    <a href="/"><button>Go to homepage</button></a>
   </body>
 </html>
