@@ -23,8 +23,6 @@ db_config = {
     "port": app.config["MYSQL_PORT"]
 }
 
-# Function to get DB connection
-
 
 def get_db_connection():
     # Returning the rows as dictionaries to make them easier to work with.
@@ -32,28 +30,8 @@ def get_db_connection():
 
 
 def create_table(cursor):
-    # Checking if the database exists.
-    # cursor.execute("SHOW DATABASES LIKE 'flaskJenkins'")
-    # db_exists = cursor.fetchone()
-
-    # if not db_exists:
-    #     # Creating the database.
-    #     cursor.execute("CREATE DATABASE flaskJenkins")
-
     # Selecting the database.
     cursor.execute("USE flaskJenkins")
-
-    # Checking if the user exists.
-    # cursor.execute("SELECT USER FROM MYSQL.USER WHERE USER = 'flaskJenkinsUser'")
-    # user_exists = cursor.fetchone()
-
-    # if not user_exists:
-    #     # Granting permission.
-    #     cursor.execute(
-    #         "CREATE USER 'flaskJenkinsUser'@'%' IDENTIFIED WITH mysql_native_password BY 'password12-'")
-    #     cursor.execute(
-    #         "GRANT ALL PRIVILEGES ON *.* TO 'flaskJenkinsUser'@'%' WITH GRANT OPTION")
-    #     cursor.execute("FLUSH PRIVILEGES")
 
     # Creating the table.
     cursor.execute("""CREATE TABLE IF NOT EXISTS movie (
@@ -90,9 +68,6 @@ def index():
 @app.route("/movies/", methods=['GET'])
 def allMovies():
     try:
-        # connection = get_db_connection()
-        # cursor = connection.cursor()
-        # Using with to make sure that all my connections are properly closed to avoid memory leaks.
         with get_db_connection() as connection:
             with connection.cursor() as cursor:
                 # Selecting all the movies.
@@ -119,8 +94,6 @@ def viewMovie():
     movie_id = request.form.get("movie-id")
 
     try:
-        # connection = get_db_connection()
-        # cursor = connection.cursor()
         with get_db_connection() as connection:
             with connection.cursor() as cursor:
                 # Selecting a specific movie.
@@ -139,8 +112,6 @@ def viewMovie():
 @app.route("/movies/search/<id>/", methods=['GET'])
 def getMovie(id):
     try:
-        # connection = get_db_connection()
-        # cursor = connection.cursor()
         with get_db_connection() as connection:
             with connection.cursor() as cursor:
                 sql = "SELECT * FROM movie WHERE movie_id = %s"
@@ -161,8 +132,6 @@ def addedMovie():
     movie_desc = request.form.get("movie-desc")
 
     try:
-        # connection = get_db_connection()
-        # cursor = connection.cursor()
         with get_db_connection() as connection:
             with connection.cursor() as cursor:
                 sql = "INSERT INTO movie (movie_name, movie_desc) VALUES (%s, %s)"
@@ -174,6 +143,6 @@ def addedMovie():
         return get_error(e, "Error occurred when adding movie. Movie not added.")
 
 
-# Creating the db and the initial connection.
+# Creating the table.
 start_db_connection()
 app.run(host="0.0.0.0", port=5001, debug=True)
